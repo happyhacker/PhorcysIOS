@@ -49,7 +49,7 @@
     [picker reloadAllComponents];
     [self calcMod];
     
-    NSArray *array = [[NSArray alloc] initWithObjects:@"1.0",@"1.1",@"1.2",@"1.3",@"1.4",@"1.5",@"1.6", nil];
+    NSArray *array = [[NSArray alloc] initWithObjects:@"1.0",@"1.1",@"1.2",@"1.3",@"1.4",@"1.5",@"1.6",@"1.7",@"1.8",@"1.9",@"2.0", nil];
     self.pickerData = array;
 }
 
@@ -95,7 +95,19 @@
                         } else
                             if (select == 6) {
                                 po2 = 1.6;
-                            }
+                            } else
+                                if(select == 7) {
+                                    po2 = 1.7;
+                                } else
+                                    if(select == 8) {
+                                        po2 = 1.8;
+                                    } else
+                                        if (select == 9) {
+                                            po2 = 1.9;
+                                        } else
+                                            if (select == 10) {
+                                                po2 = 2.0;
+                                            }
     [self calcMod];
 }
 
