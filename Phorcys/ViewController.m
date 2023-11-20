@@ -80,34 +80,34 @@
     } else
         if (select == 1) {
             po2 = 1.1;
-        } else
-            if (select == 2) {
-                po2 = 1.2;
-            } else
-                if (select == 3) {
-                    po2 = 1.3;
-                } else
-                    if (select == 4) {
-                        po2 = 1.4;
-                    } else
-                        if (select == 5) {
-                            po2 = 1.5;
-                        } else
-                            if (select == 6) {
-                                po2 = 1.6;
-                            } else
-                                if(select == 7) {
-                                    po2 = 1.7;
-                                } else
-                                    if(select == 8) {
-                                        po2 = 1.8;
-                                    } else
-                                        if (select == 9) {
-                                            po2 = 1.9;
-                                        } else
-                                            if (select == 10) {
-                                                po2 = 2.0;
-                                            }
+    } else
+        if (select == 2) {
+            po2 = 1.2;
+    } else
+        if (select == 3) {
+            po2 = 1.3;
+    } else
+        if (select == 4) {
+            po2 = 1.4;
+    } else
+        if (select == 5) {
+            po2 = 1.5;
+    } else
+        if (select == 6) {
+            po2 = 1.6;
+    } else
+        if(select == 7) {
+            po2 = 1.7;
+    } else
+        if(select == 8) {
+            po2 = 1.8;
+    } else
+        if (select == 9) {
+            po2 = 1.9;
+    } else
+        if (select == 10) {
+            po2 = 2.0;
+    }
     [self calcMod];
 }
 
