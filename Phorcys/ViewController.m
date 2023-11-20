@@ -21,7 +21,8 @@
 
 -(IBAction)slider_moved:(id)sender
 {
-  [self calcMod];
+
+    [self calcMod];
 }
 
 - (void) calcMod
@@ -30,7 +31,8 @@
     o2.text = [NSString stringWithFormat:@"%i",(int)slider.value];
     float atm = (po2 / (sliderValue / 100.0f))-1;
     float fMod = atm * 34;
-    mod.text = [NSString stringWithFormat:@"%i",(int)fMod];
+    NSString *sMod = [NSString stringWithFormat:@"%i",(int)fMod];
+    mod.text = sMod;
     return;
 }
 
@@ -45,11 +47,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    po2 = 1.0f;
+    po2 = .5f;
     [picker reloadAllComponents];
     [self calcMod];
     
-    NSArray *array = [[NSArray alloc] initWithObjects:@"1.0",@"1.1",@"1.2",@"1.3",@"1.4",@"1.5",@"1.6",@"1.7",@"1.8",@"1.9",@"2.0", nil];
+    NSArray *array = [[NSArray alloc] initWithObjects:@".5",@".6",@".7",@".8",@".9",@"1.0",@"1.1",@"1.2",@"1.3",@"1.4",@"1.5",@"1.6",@"1.7",@"1.8",@"1.9",@"2.0", nil];
     self.pickerData = array;
 }
 
@@ -68,13 +70,15 @@
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self.pickerData objectAtIndex:row];
+    NSString * retVal = [self.pickerData objectAtIndex:row];
+    //po2 = [retVal floatValue];
+    return retVal; //[self.pickerData objectAtIndex:row];
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    //float po2 = 1.0f;
-    
-    int select = (int)row;
+    NSString * retVal = [self.pickerData objectAtIndex:row];
+    po2 = [retVal floatValue];
+     /*int select = (int)row;
     if (select == 0) {
         po2 = 1.0;
     } else
@@ -107,7 +111,7 @@
     } else
         if (select == 10) {
             po2 = 2.0;
-    }
+    }*/
     [self calcMod];
 }
 
